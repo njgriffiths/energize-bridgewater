@@ -1,0 +1,70 @@
+.fact-box {
+	margin: 3rem 0;
+	text-align: center;
+
+	> li {
+		// display: inline-block;
+		margin: 2rem 0;
+		position: relative;
+		vertical-align: top;
+	
+		.background {
+			color: $greySecondary;
+			font-size: 7rem;
+			left: 50%;
+			opacity: 0.4;
+			position: absolute;
+			top: 50%;
+			z-index: -1;
+		}
+		.big-num {
+			color: $highlight;
+			font-size: 3.25rem;
+			font-weight: 800;
+			margin-bottom: 10px;
+		}
+		.text {
+			color: $greyPrimary;
+			font-size: 0.75rem;
+			text-transform: uppercase;
+		}
+
+		&#investments .background {
+			// margin: -64px 0 0 -32px; // 8rem
+			// margin: -56px 0 0 -28px;
+			margin: -75px 0 0 -28px;
+		}
+		&#emissions .background {
+			// margin: -64px 0 0 -53px; // 8rem
+			margin: -56px 0 0 -46px;
+			margin: -75px 0 0 -46px;
+		}
+	}
+}
+
+// MEDIA QUERIES
+@media screen and (min-width: $webViewWidth) {
+	.fact-box {
+		> li {
+			display: inline-block;
+			margin: 0 1rem;
+
+			.background {
+				font-size: 10rem;
+			}
+			.big-num {
+				font-size: 4.75rem;
+			}
+			.text {
+				font-size: 0.75rem;
+			}
+			&#investments .background {
+				margin: -105px 0 0 -40px;
+			}
+			&#emissions .background {
+				margin: -105px 0 0 -67px;
+			}
+		}
+	}
+}
+

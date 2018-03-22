@@ -1,0 +1,63 @@
+.content {
+	margin-bottom: 5rem;
+
+	.text-column {
+		margin: 0 auto;
+		width: 95%;
+
+		> p {
+			margin: 4% auto;
+		}
+
+		.section-head {
+			color: $highlight;
+			font-size: 2rem;
+			margin-top: 5rem;
+		}
+	}
+
+	.media-wrap {
+		margin: 12% auto;
+		max-width: 95%;
+		position: relative;
+
+		.media {
+			position: relative;
+		}
+
+		.chart-header {
+			font-weight: 800;
+			margin-bottom: 0.25rem;
+		}
+
+		.float-right {
+			float: right;
+			width: 48%;
+		}
+
+		.float-left {
+			float: left;
+			width: 48%;
+		}
+	}
+
+	.button {
+		background-color: $highlight;
+		border: 1px solid $highlight;
+		border-radius: 3px;
+		color: white;
+		font-size: 0.7rem;
+		padding: 8px 6px 6px;
+		text-decoration: none;
+	}
+
+	.button-wrap {
+		margin: 3rem 0;
+		text-align: center;
+
+		> li {
+			display: inline-block;
+			margin: 0 2px;
+		}
+	}
+}

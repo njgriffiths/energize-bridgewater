@@ -1,0 +1,51 @@
+#nav-bar {
+	// background-color: $highlight;
+	background-color: #FFF;
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+
+	.logo-eb {
+		margin-left: 5%;
+
+		> a > img {
+			height: 50px;
+			width: auto;
+		}
+	}
+
+	.logo-town {
+		float: right;
+		margin: 10px 5% 0 0;
+
+		> a > img {
+			height: 25px;
+			width: auto;
+		}
+	}
+
+	// #social-buttons {
+	// 	margin-right: 1.75rem;
+	// 	text-align: right;
+
+	// 	.icon {
+	// 		display: inline-block;
+	// 		height: 25px;
+	// 		margin: 0 2px;
+	// 		text-align: center;
+	// 		width: 25px;
+	// 	}
+	// }
+}
+
+
+// MEDIA QUERIES
+@media screen and (min-width: $webViewWidth) {
+	.logo {
+
+		> a > img {
+			height: 45px;
+			width: 118px;
+		}
+	}
+}

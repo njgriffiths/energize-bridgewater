@@ -1,0 +1,39 @@
+.article {
+	.text-column {
+		margin: 0 auto;
+		max-width: 600px;
+
+		> p {
+			font-size: 1rem;
+			margin: 2rem auto;
+			line-height: 1.4rem;
+		}
+	}
+
+	.media-wrap {
+		margin: 0 auto;
+		max-width: 800px;
+
+		.embed-single-left,
+		.embed-single-right {
+			max-width: 350px;
+			min-width: 150px;
+			width: 30%;
+		}
+
+		.embed-single-left {
+			float: left;
+			margin: 0 20px 20px 0;
+		}
+
+		.embed-single-right {
+			float: right;
+			margin: 0 0 20px 20px;
+		}
+	}
+
+	.button {
+		font-size: 0.9rem;
+		padding: 9px 7px 7px;
+	}
+}

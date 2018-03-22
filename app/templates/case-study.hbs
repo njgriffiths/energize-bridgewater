@@ -1,0 +1,19 @@
+<h3><span class="bold">Case Study:</span> {{title}}</h3>
+
+<div class="media float-left">
+	<picture>
+		<source srcset="img/case-studies/{{imageName}}-mobile.jpg" media="(max-width: 640px)">
+		<source srcset="img/case-studies/{{imageName}}-web.jpg" media="(min-width: 640px)">
+		<img srcset="img/case-studies/{{imageName}}-mobile.jpg" alt="image">
+	</picture>
+</div>
+
+<div class="text">
+	<p>{{text}}</p>
+
+	{{!-- <div class="button-wrap">
+		<a href="{{url}}" class="button">Learn More</a>
+	</div> --}}
+</div>
+
+<div class="clearfix"></div>

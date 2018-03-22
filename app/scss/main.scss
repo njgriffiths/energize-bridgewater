@@ -1,0 +1,39 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+*/
+
+
+// VARIABLES
+$webViewWidth: 640px;
+
+// COLOURS
+$ebBlue: rgb(0, 174, 240);
+$ebGreen: rgb(119, 176, 68); //#719430;
+$ebPurple: rgb(138, 38, 143);
+$ebOrange: rgb(249, 157, 26);
+$greyPrimary: #8a8a8a;
+$greySecondary: #c1c1c1;
+
+$highlight: $ebGreen;
+
+
+// IMPORTS
+@import 'compass/reset';
+@import 'compass/css3';
+@import 'base';
+@import 'mobile-view';
+@import 'fonts';
+@import 'nav-bar';
+@import 'headers';
+@import 'pull-quote';
+@import 'big-numbers';
+@import 'case-study';
+@import 'card';
+
+
+
+// MEDIA QUERIES
+@media screen and (min-width: $webViewWidth) {
+	@import 'web-view';
+}
+

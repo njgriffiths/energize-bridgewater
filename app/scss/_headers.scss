@@ -1,0 +1,152 @@
+.hero-wrap {
+	position: relative;
+	
+	&#hero-01 {
+		background: url(../img/backgrounds/POcommunity.jpg);
+		background-attachment: fixed;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size:cover;
+
+		.title {
+			bottom: auto;
+			left: 5%;
+			position: absolute;
+			top: 20%;
+		}
+	}
+	&#hero-02 {
+		background: url(../img/backgrounds/powerplant.jpg);
+		background-attachment: fixed;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size:cover;
+
+		.secondary {
+			letter-spacing: 0px;
+		}
+	}
+	&#hero-03 {
+		background: url(../img/backgrounds/IGP5963_1280a.jpg);
+		background-attachment: fixed;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	&#hero-04 {
+		background: url(../img/backgrounds/IGP6249_1280a.jpg);
+		background-attachment: fixed;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.inner {
+		min-height: 600px;
+		position: relative;
+
+		.title {
+			bottom: 5%;
+			left: 5%;
+			position: absolute;
+
+			> h1 {
+				color: #FFF;
+				font-size: 2rem;
+				text-shadow: 1px 1px 2px #333;
+				text-transform: uppercase;
+
+				&.secondary {
+					letter-spacing: 3px;
+				}
+				&.primary {
+					color: $highlight;
+					font-size: 2.5em;
+    				font-weight: 800;
+				}
+			}
+
+			> h2 {
+				color: #FFF;
+				font-size: 0.75rem;
+				text-transform: uppercase;
+			}
+		}	
+	}
+}
+
+@media screen and (orientation: portrait) {
+	.hero-wrap {
+		&#hero-01 {
+			background: url(../img/backgrounds/POcommunity-portrait.png);
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		&#hero-02 {
+			background: url(../img/backgrounds/powerplant-portrait.jpg);
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		&#hero-03 {
+			background: url(../img/backgrounds/IGP5963_1280a-portrait.jpg);
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		&#hero-04 {
+			background: url(../img/backgrounds/IGP6249_1280a-portrait.jpg);
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		.inner {
+			min-height: 120vw;
+		}
+	}
+}
+
+@media screen and (min-width: $webViewWidth) and (orientation: landscape) {
+	.hero-wrap {
+
+		&#hero-01 {
+			.title {
+				top: 10%;
+			}
+			.secondary {
+				letter-spacing: 0px;
+			}
+		}
+		&#hero-02 {
+			.secondary {
+				font-size: 4.5rem;
+				letter-spacing: 0px;
+			}
+		}
+
+		.inner {
+			min-height: 600px;
+
+			.title {
+
+				> h1 {
+					font-size: 5em;
+
+					&.secondary {
+						letter-spacing: 1px;
+					}
+					&.primary {
+						font-size: 5.5em;
+					}
+				}
+
+				> h2 {
+					font-size: 2em;
+				}
+			}
+		}
+	}
+}
+

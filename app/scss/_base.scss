@@ -1,0 +1,46 @@
+.article {
+	h1, h2, h3, h4, p, a {
+		font-family: 'Open Sans', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	}
+
+	h3 {
+		font-size: 1.2rem;
+	    line-height: 1.1rem;
+	    margin-bottom: 8px;
+	}
+
+	p {
+		font-size: 1rem;
+		font-weight: 400;
+		color: #343434;
+		letter-spacing: 0.005rem;
+		line-height: 1.35rem;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	.clearfix {
+		clear: both;
+		display: block;
+	}
+
+	.button {
+		background-color: $highlight;
+		border: 1px solid $highlight;
+		border-radius: 3px;
+		color: white;
+		font-size: 0.75rem;
+		padding: 8px 6px 6px;
+		text-decoration: none;
+	}
+
+	.highlight {
+		color: $highlight !important;
+	}
+
+	.italic {
+		font-style: italic;
+	}
+}

@@ -1,0 +1,49 @@
+.case-study {
+	box-shadow: 2px 0px 20px #e9e9e9;
+	margin: 5rem auto;
+	max-width: 800px;
+	padding: 1rem 0.75rem;
+
+	> h3 {
+
+		margin-bottom: 0.5rem;
+
+		.bold {
+			color: $highlight;
+			text-transform: uppercase;
+		}
+	}
+
+	.text {
+		> p {
+			color: $greyPrimary;
+			font-size: 0.8rem;
+		}
+		.button-wrap {
+			margin-top: 1.75rem;
+			text-align: center;
+		}	
+	}
+}
+
+
+// MEDIA QUERIES
+@media screen and (min-width: $webViewWidth) {
+	.case-study {
+
+		.text {
+			> p {
+				padding: 0 0.75rem;
+			}
+		}
+
+		.media {
+			margin-right: 1rem;
+		}
+		.float-left {
+			float: left;
+			max-width: 400px;
+			width: 30%;
+		}
+	}
+}
