@@ -17,4 +17,5 @@ To build the files for publication run:
 This will compile & minify files & copy them into the 'dist' directory. Contents of the 'dist' directory can be copied to the server.
 
 
-
+Case Studies & "What's next" cards:
+These pieces are built dynamically, using templates found in the "templates" directory. To edit the text of these, you will need to edit the JSON files in the "data" directory – there are two files, one for the cards (ards.json) & another for the case studies (case-studies.json). Changes to either the text or the template will require rerunning the build script (npm run build).
