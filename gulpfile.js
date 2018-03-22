@@ -95,7 +95,7 @@ gulp.task('favicons', () => {
 // JS uglify
 gulp.task('ugly-js', ['webpack'], () => {
 	return gulp.src(folder.src + 'js/bundle.js')
-		.pipe(stripdebug()) // remove logs * comments
+		.pipe(stripdebug()) // remove logs & comments
 		// .pipe(uglify()) // do this via webpackConfig
 		.pipe(gulp.dest(folder.build + 'js/'));
 });
@@ -117,7 +117,7 @@ gulp.task('ugly-css', ['images'], () => {
 gulp.task('html', ['images'], () => {
 	return gulp.src(folder.src + '/**/*.html')
 		.pipe(newer(folder.build))
-		.pipe(htmlclean())
+		// .pipe(htmlclean())
 		.pipe(gulp.dest(folder.build))
 });
 
