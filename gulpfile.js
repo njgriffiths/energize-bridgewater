@@ -1,4 +1,4 @@
-	const gulp = require('gulp');
+const gulp = require('gulp');
 const gutil = require('gulp-util');
 const webpack = require('webpack');
 const newer = require('gulp-newer');
@@ -47,7 +47,7 @@ gulp.task('sass', () => {
 });
 gulp.task('webpack', () => { 
 	return webpackStream(webpackConfig)
-		.pipe(gulp.dest('app/js'))
+		.pipe(gulp.dest('app'))
 		.pipe(reload({ stream: true }));
 });
 
