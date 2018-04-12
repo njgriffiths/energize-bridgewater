@@ -1,0 +1,73 @@
+$axisColor: #e9e9e9;
+$greyText: #b3b3b3;
+
+
+.tooltip {
+	background: rgba(255, 255, 255, 0.9);
+	border: 1px solid $axisColor;
+	border-radius: 3px;
+	box-shadow: 1px 1px 2px #333; 
+	font: 12px sans-serif;
+	padding: 4px;
+	pointer-events: none;
+	position: absolute;
+	width: 120px;
+
+	.highlight {
+		color: $ebGreen;
+	}
+}
+
+
+// LEGEND
+.legend-container {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-row-gap: 10px;
+	margin-left: 10%;
+
+	.legend {
+		.swatch {
+			float: left;
+			height: 15px;
+			width: 15px;
+		}
+
+		p {
+			color: $greyText;
+			font: 10px sans-serif;
+			margin-left: 20px;
+			text-align: left;
+			vertical-align: text-top;
+		}
+	}
+}
+
+
+// AXES
+.y-axis-label {
+	font-size: 0.8em;
+	font-family: sans-serif;
+	text-transform: uppercase;
+}
+
+.axis {
+	.domain {
+		stroke-width: 0;
+	}
+	.tick {
+		text {
+			fill: $greyText;
+		} 
+		line {
+			stroke: $axisColor;
+		}
+	}
+}
+
+
+@media screen and (min-width: $webViewWidth) {
+	.legend-container {
+		grid-template-columns: 33% 33% 33%;
+	}
+}
