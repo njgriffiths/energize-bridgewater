@@ -61,7 +61,6 @@ var app = {
 		this.buildChart();
 
 		window.addEventListener('resize', this.buildChart);
-		console.log(this)
 	},
 	assignColors: function(keys) {
 		return d3.scaleOrdinal()
