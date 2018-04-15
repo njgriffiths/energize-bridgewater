@@ -1,6 +1,6 @@
 // CHARTS
 var barChart = require('./stacked-bar');
-// var areaChart = require('./stacked-area');
+var areaChart = require('./stacked-area');
 
 // DATA
 var caseStudies = require('../data/case-studies.json'); 
@@ -12,6 +12,7 @@ var savings = require('../data/cost-savings.json');
 var caseStudyTemplate = require('../templates/case-study.hbs');
 var cardsTemplate = require('../templates/card.hbs');
 var tooltipStackedTemplate = require('../templates/stacked-tooltip.hbs');
+var tooltipAreaTemplate = require('../templates/area-tooltip.hbs');
 
 
 // 
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', (ev) => {
 
 	// BUILD THE CHARTS
 	barChart.init('#investment-chart', investments, tooltipStackedTemplate);
+	areaChart.init('#savings-chart', savings, tooltipAreaTemplate);
 });
 
 

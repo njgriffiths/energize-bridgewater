@@ -11,14 +11,9 @@ var margin = {
 var barWidth;
 var yAxisLabel = 'Capital Investments ($)';
 
-
-var colors = ['#BBCDA3', '#055C81', '#B13C3D'];
-var colors = ['rgba(17, 100, 142, 0.4)', 'rgba(17, 100, 142, 1)', 'rgba(17, 100, 142, 0.7)']; 
-var labels = ['Energy Efficient Buildings', 'Community-Scale Energy Systems', 'Clean & Active Transportation Systems'];
-
-
-var formatTime = d3.timeFormat('%Y');
 var parseDate = d3.timeParse('%Y');
+var colors = ['rgba(17, 100, 142, 0.4)', 'rgba(17, 100, 142, 1)', 'rgba(17, 100, 142, 0.7)'];
+var labels = ['Energy Efficient Buildings', 'Community-Scale Energy Systems', 'Clean & Active Transportation Systems'];
 
 
 var app = {
@@ -56,7 +51,7 @@ var app = {
 		});
 		this.el = el;
 		this.data = data;
-		
+
 		// let's get to work!
 		this.buildChart();
 
@@ -216,7 +211,7 @@ var app = {
 
 		// remove the year field
 		var keys = keys.filter(function(key) { 
-			if (key !== 'year') { return key; }
+			if (key !== 'date') { return key; }
 		});
 
 		return keys;

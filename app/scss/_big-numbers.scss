@@ -30,14 +30,17 @@
 		}
 
 		&#investments .background {
-			// margin: -64px 0 0 -32px; // 8rem
-			// margin: -56px 0 0 -28px;
 			margin: -75px 0 0 -28px;
 		}
 		&#emissions .background {
-			// margin: -64px 0 0 -53px; // 8rem
-			margin: -56px 0 0 -46px;
+			// margin: -56px 0 0 -46px;
 			margin: -75px 0 0 -46px;
+		}
+		&#employment .background {
+    		height: 90px;
+    		margin: -70px 0 0 -45px;
+    		opacity: 0.125;
+    		width: 90px;
 		}
 	}
 }
@@ -63,6 +66,11 @@
 			}
 			&#emissions .background {
 				margin: -105px 0 0 -67px;
+			}
+			&#employment .background {
+    			height: 120px;
+    			margin: -100px 0 0 -60px;
+    			width: 120px;
 			}
 		}
 	}

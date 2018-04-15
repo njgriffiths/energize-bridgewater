@@ -406,8 +406,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin: -75px 0 0 -28px;
 }
 .fact-box > li#emissions .background {
-  margin: -56px 0 0 -46px;
   margin: -75px 0 0 -46px;
+}
+.fact-box > li#employment .background {
+  height: 90px;
+  margin: -70px 0 0 -45px;
+  opacity: 0.125;
+  width: 90px;
 }
 
 @media screen and (min-width: 640px) {
@@ -429,6 +434,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
   .fact-box > li#emissions .background {
     margin: -105px 0 0 -67px;
+  }
+  .fact-box > li#employment .background {
+    height: 120px;
+    margin: -100px 0 0 -60px;
+    width: 120px;
   }
 }
 .case-study {
@@ -528,6 +538,124 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     text-align: left;
   }
 }
+.tooltip {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e9e9e9;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px #333;
+  font: 12px sans-serif;
+  padding: 4px;
+  pointer-events: none;
+  position: absolute;
+  width: 120px;
+}
+.tooltip .highlight {
+  color: #77b044;
+}
+
+.legend-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-row-gap: 10px;
+  margin-left: 10%;
+}
+.legend-container .legend .swatch {
+  float: left;
+  height: 15px;
+  width: 15px;
+}
+.legend-container .legend p {
+  color: #b3b3b3;
+  font: 10px sans-serif;
+  margin-left: 20px;
+  text-align: left;
+  vertical-align: text-top;
+}
+
+.y-axis-label {
+  font-size: 0.8em;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+.axis .domain {
+  stroke-width: 0;
+}
+.axis .tick text {
+  fill: #b3b3b3;
+}
+.axis .tick line {
+  stroke: #e9e9e9;
+}
+
+@media screen and (min-width: 640px) {
+  .legend-container {
+    grid-template-columns: 33% 33% 33%;
+  }
+}
+.tooltip {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e9e9e9;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px #333;
+  font: 12px sans-serif;
+  padding: 4px;
+  pointer-events: none;
+  position: absolute;
+  width: 180px;
+}
+.tooltip h2 {
+  font-size: 1.5em;
+  margin-bottom: 4px;
+}
+.tooltip .num {
+  display: block;
+  float: right;
+  text-align: right;
+}
+.tooltip p:last-of-type {
+  margin-top: 5px;
+}
+.tooltip .highlight {
+  color: #77b044;
+}
+
+.legend-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-row-gap: 10px;
+  margin-left: 11%;
+  max-width: 75%;
+}
+.legend-container .legend .swatch {
+  float: left;
+  height: 15px;
+  width: 15px;
+}
+.legend-container .legend p {
+  color: #b3b3b3;
+  font: 10px sans-serif;
+  margin-left: 20px;
+  text-align: left;
+  vertical-align: text-top;
+}
+
+.y-axis-label {
+  font-size: 0.8em;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+.axis .domain {
+  stroke-width: 0;
+}
+.axis .tick text {
+  fill: #b3b3b3;
+}
+.axis .tick line {
+  stroke: #e9e9e9;
+}
+
 @media screen and (min-width: 640px) {
   .article .text-column {
     margin: 0 auto;
