@@ -119,8 +119,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   position: relative;
 }
 .content .media-wrap .chart-header {
+  font-size: 1.25rem;
   font-weight: 800;
-  margin-bottom: 0.25rem;
+  margin: 0 0 0.25rem 2%;
 }
 .content .media-wrap .float-right {
   float: right;
