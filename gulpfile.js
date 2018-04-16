@@ -97,7 +97,7 @@ gulp.task('ugly-js', ['webpack'], () => {
 	return gulp.src(folder.src + 'js/bundle.js')
 		.pipe(stripdebug()) // remove logs & comments
 		// .pipe(uglify()) // do this via webpackConfig
-		.pipe(gulp.dest(folder.build + 'js/'));
+		.pipe(gulp.dest(folder.build + ''));
 });
 
 // CSS uglify
