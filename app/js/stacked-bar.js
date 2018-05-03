@@ -185,8 +185,13 @@ var app = {
 
 		// prep tooltip content
 		var key = d.key;
+
+		// set key so we can ID diff tooltip text for template
+		if (key === 's3') {
+			d.alt = true;
+		}
 		var strategy = labels[parseInt(key.substr(1)) - 1];
-		d.ttValue = d3.format(',.0f')(d.value);
+		d.ttValue = d3.format(',.0f')(Math.abs(d.value));
 		d.strategy = strategy.toLowerCase();
 		var htmlString = app.tooltipTemplate(d);
 

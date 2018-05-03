@@ -10650,8 +10650,13 @@ var app = {
 
 		// prep tooltip content
 		var key = d.key;
+
+		// set key so we can ID diff tooltip text for template
+		if (key === 's3') {
+			d.alt = true;
+		}
 		var strategy = labels[parseInt(key.substr(1)) - 1];
-		d.ttValue = d3.format(',.0f')(d.value);
+		d.ttValue = d3.format(',.0f')(Math.abs(d.value));
 		d.strategy = strategy.toLowerCase();
 		var htmlString = app.tooltipTemplate(d);
 
@@ -26010,16 +26015,28 @@ module.exports = (Handlebars['default'] || Handlebars).template({"compiler":[7,"
 /***/ (function(module, exports, __webpack_require__) {
 
 var Handlebars = __webpack_require__(52);
-module.exports = (Handlebars['default'] || Handlebars).template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+module.exports = (Handlebars['default'] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "<p>An estimated <span class=\"highlight\">$"
+  return "	<p>An estimated net <span class=\"highlight\">$"
+    + alias4(((helper = (helper = helpers.ttValue || (depth0 != null ? depth0.ttValue : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"ttValue","hash":{},"data":data}) : helper)))
+    + "</span> in reduced vehicle and transportation costs in <span class=\"highlight\">"
+    + alias4(((helper = (helper = helpers.date || (depth0 != null ? depth0.date : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"date","hash":{},"data":data}) : helper)))
+    + "</span>.</p>\n";
+},"3":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return "	<p>An estimated <span class=\"highlight\">$"
     + alias4(((helper = (helper = helpers.ttValue || (depth0 != null ? depth0.ttValue : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"ttValue","hash":{},"data":data}) : helper)))
     + "</span> invested in "
     + alias4(((helper = (helper = helpers.strategy || (depth0 != null ? depth0.strategy : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"strategy","hash":{},"data":data}) : helper)))
     + " in <span class=\"highlight\">"
     + alias4(((helper = (helper = helpers.date || (depth0 != null ? depth0.date : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"date","hash":{},"data":data}) : helper)))
-    + "</span>.</p>";
+    + "</span>.</p>\n";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1;
+
+  return ((stack1 = helpers["if"].call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.alt : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(3, data, 0),"data":data})) != null ? stack1 : "");
 },"useData":true});
 
 /***/ }),

@@ -543,7 +543,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border: 1px solid #e9e9e9;
   border-radius: 3px;
   box-shadow: 1px 1px 2px #333;
-  font: 12px sans-serif;
+  font: 0.9em sans-serif;
   padding: 4px;
   pointer-events: none;
   position: absolute;
@@ -573,7 +573,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 .y-axis-label {
-  font-size: 0.8em;
+  font-size: 0.9em;
   font-family: sans-serif;
   text-transform: uppercase;
 }
@@ -583,6 +583,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 .axis .tick text {
   fill: #b3b3b3;
+  font-size: 1.1em;
 }
 .axis .tick line {
   stroke: #e9e9e9;
@@ -598,7 +599,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border: 1px solid #e9e9e9;
   border-radius: 3px;
   box-shadow: 1px 1px 2px #333;
-  font: 12px sans-serif;
+  font: 0.9em sans-serif;
   padding: 4px;
   pointer-events: none;
   position: absolute;
@@ -641,7 +642,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 .y-axis-label {
-  font-size: 0.8em;
+  font-size: 0.9em;
   font-family: sans-serif;
   text-transform: uppercase;
 }
@@ -651,6 +652,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 .axis .tick text {
   fill: #b3b3b3;
+  font-size: 1.1em;
 }
 .axis .tick line {
   stroke: #e9e9e9;
