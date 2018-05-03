@@ -72,8 +72,6 @@ var app = {
 			app.drawData(app.groupedData[key], key, svg);
 			app.addLegendKey(colors[key], labels[key], legendEl);
 		}
-
-		console.log(app)
 	},
 	configureAxes: function(data) {
 		var height = this.height;

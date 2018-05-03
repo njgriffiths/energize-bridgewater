@@ -531,11 +531,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 @media screen and (min-width: 640px) {
   #card-container {
-    text-align: container;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
   #card-container .card {
-    display: inline-block;
-    max-width: 44%;
     text-align: left;
   }
 }

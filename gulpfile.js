@@ -47,7 +47,8 @@ gulp.task('sass', () => {
 });
 gulp.task('webpack', () => { 
 	return webpackStream(webpackConfig)
-		.pipe(gulp.dest('app'))
+		.pipe(gulp.dest(folder.src))
+		.pipe(gulp.dest(folder.build))
 		.pipe(reload({ stream: true }));
 });
 
@@ -97,7 +98,7 @@ gulp.task('ugly-js', ['webpack'], () => {
 	return gulp.src(folder.src + 'js/bundle.js')
 		.pipe(stripdebug()) // remove logs & comments
 		// .pipe(uglify()) // do this via webpackConfig
-		.pipe(gulp.dest(folder.build + ''));
+		.pipe(gulp.dest(folder.build));
 });
 
 // CSS uglify

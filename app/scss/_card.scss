@@ -69,12 +69,10 @@
 // MEDIA QUERIES
 @media screen and (min-width: $webViewWidth) {
 	#card-container {
-		text-align: container;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 	
 		.card {
-			display: inline-block;
-			max-width: 44%;
-			// float: left;
 			text-align: left;
 		}
 	}

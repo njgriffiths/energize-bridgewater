@@ -20,7 +20,7 @@ module.exports = {
 		fs: 'empty'
 	},
 	output: {
-		path: __dirname + '/app/js',
+		path: __dirname + '/app',
 		filename: 'bundle.js'
 	},
 	resolve: {
