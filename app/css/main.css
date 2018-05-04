@@ -553,27 +553,27 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   color: #77b044;
 }
 
-.legend-container {
+#investment-chart .legend-container {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
   grid-row-gap: 10px;
   margin-left: 10%;
 }
-.legend-container .legend .swatch {
+#investment-chart .legend-container .legend .swatch {
   float: left;
   height: 15px;
   width: 15px;
 }
-.legend-container .legend p {
+#investment-chart .legend-container .legend p {
   color: #b3b3b3;
-  font: 10px sans-serif;
+  font: 0.8em sans-serif;
   margin-left: 20px;
   text-align: left;
   vertical-align: text-top;
 }
 
 .y-axis-label {
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-family: sans-serif;
   text-transform: uppercase;
 }
@@ -583,7 +583,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 .axis .tick text {
   fill: #b3b3b3;
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 .axis .tick line {
   stroke: #e9e9e9;
@@ -591,7 +591,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 @media screen and (min-width: 640px) {
   .legend-container {
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 .tooltip {
@@ -623,10 +623,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 .legend-container {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
   grid-row-gap: 10px;
-  margin-left: 11%;
-  max-width: 75%;
+  margin-left: 10%;
 }
 .legend-container .legend .swatch {
   float: left;
@@ -635,14 +634,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 .legend-container .legend p {
   color: #b3b3b3;
-  font: 10px sans-serif;
+  font: 0.8em sans-serif;
   margin-left: 20px;
   text-align: left;
   vertical-align: text-top;
 }
 
 .y-axis-label {
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-family: sans-serif;
   text-transform: uppercase;
 }
@@ -652,7 +651,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 .axis .tick text {
   fill: #b3b3b3;
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 .axis .tick line {
   stroke: #e9e9e9;

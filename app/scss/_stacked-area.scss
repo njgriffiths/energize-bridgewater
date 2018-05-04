@@ -38,10 +38,9 @@ $greyText: #b3b3b3;
 // LEGEND
 .legend-container {
 	display: grid;
-	grid-template-columns: 50% 50%;
+	grid-template-columns: 1fr 1fr;
 	grid-row-gap: 10px;
-	margin-left: 11%;
-	max-width: 75%;
+	margin-left: 10%;
 
 	.legend {
 		.swatch {
@@ -52,7 +51,7 @@ $greyText: #b3b3b3;
 
 		p {
 			color: $greyText;
-			font: 10px sans-serif;
+			font: $legendFontSize sans-serif;
 			margin-left: 20px;
 			text-align: left;
 			vertical-align: text-top;

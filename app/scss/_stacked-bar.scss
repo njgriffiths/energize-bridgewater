@@ -20,9 +20,9 @@ $greyText: #b3b3b3;
 
 
 // LEGEND
-.legend-container {
+#investment-chart .legend-container {
 	display: grid;
-	grid-template-columns: 50% 50%;
+	grid-template-columns: 1fr 1fr;
 	grid-row-gap: 10px;
 	margin-left: 10%;
 
@@ -35,7 +35,7 @@ $greyText: #b3b3b3;
 
 		p {
 			color: $greyText;
-			font: 10px sans-serif;
+			font: $legendFontSize sans-serif;
 			margin-left: 20px;
 			text-align: left;
 			vertical-align: text-top;
@@ -69,6 +69,6 @@ $greyText: #b3b3b3;
 
 @media screen and (min-width: $webViewWidth) {
 	.legend-container {
-		grid-template-columns: 33% 33% 33%;
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
