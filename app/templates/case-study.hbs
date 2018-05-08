@@ -10,10 +10,12 @@
 
 <div class="text">
 	<p>{{text}}</p>
-
-	{{!-- <div class="button-wrap">
-		<a href="{{url}}" class="button">Learn More</a>
-	</div> --}}
+	
+	{{#if url}}
+		<div class="button-wrap">
+			<a href="{{url}}" class="button">Learn More</a>
+		</div>
+	{{/if}}
 </div>
 
 <div class="clearfix"></div>

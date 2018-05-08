@@ -25047,7 +25047,7 @@ module.exports = [{"id":"education","title":"Educating the Next Generation","ima
 /* 511 */
 /***/ (function(module, exports) {
 
-module.exports = [{"group":"town","title":"Community Capacity Builder","imageName":"case-study","url":"","text":"The Town’s first priority is to build its capacity to implement the Community Energy Investment Plan and to empower community partners to exercise leadership."},{"group":"town","title":"Clean Energy Enabler","imageName":"case-study","url":"","text":"Undertake a series of enabling actions to make sure that clean energy initiatives are not slowed down by red tape, and to allow residents and community partners to pursue their own energy investments."},{"group":"town","title":"Clean Energy Investor","imageName":"case-study","url":"","text":"The Town will invest in clean energy opportunities on a community scale, as well as for its municipal operations."},{"group":"residents","title":"Increase Energy Awareness","imageName":"case-study","url":"","text":"Learning about the benefits and practical applications of clean energy solutions for home, work, school, and community."},{"group":"residents","title":"Home Energy Retrofits","imageName":"case-study","url":"","text":"Upgrade  homes with cost-effective clean energy technologies and practice low-cost energy conservation habits."},{"group":"residents","title":"Use Clean Transportation","imageName":"case-study","url":"","text":"Take public transit, walk, cycle, utilize transportation sharing services, and invest in electric vehicles."},{"group":"business","title":"Building Retrofits","imageName":"case-study","url":"","text":"Businesses and organizations can upgrade their facilities with cost-effective clean energy technologies and practice low-cost energy conservation habits."},{"group":"business","title":"Invest in Clean Enery Projects","imageName":"case-study","url":"","text":"Businesses and organizations can take advantage of local investment programs that will be started by the Town of Bridgewater and the Energy Partners."},{"group":"business","title":"Energy-related skills training","imageName":"case-study","url":"","text":"Increase training for staff in current energy technologies and best practices, assign staff to energy management activities, and participate in local clean energy opportunities."}]
+module.exports = [{"group":"town","title":"Community Capacity Builder","imageName":"case-study","url":"http://www.google.com","text":"The Town’s first priority is to build its capacity to implement the Community Energy Investment Plan and to empower community partners to exercise leadership."},{"group":"town","title":"Clean Energy Enabler","imageName":"case-study","url":"","text":"Undertake a series of enabling actions to make sure that clean energy initiatives are not slowed down by red tape, and to allow residents and community partners to pursue their own energy investments."},{"group":"town","title":"Clean Energy Investor","imageName":"case-study","url":"","text":"The Town will invest in clean energy opportunities on a community scale, as well as for its municipal operations."},{"group":"residents","title":"Increase Energy Awareness","imageName":"case-study","url":"","text":"Learning about the benefits and practical applications of clean energy solutions for home, work, school, and community."},{"group":"residents","title":"Home Energy Retrofits","imageName":"case-study","url":"","text":"Upgrade  homes with cost-effective clean energy technologies and practice low-cost energy conservation habits."},{"group":"residents","title":"Use Clean Transportation","imageName":"case-study","url":"","text":"Take public transit, walk, cycle, utilize transportation sharing services, and invest in electric vehicles."},{"group":"business","title":"Building Retrofits","imageName":"case-study","url":"","text":"Businesses and organizations can upgrade their facilities with cost-effective clean energy technologies and practice low-cost energy conservation habits."},{"group":"business","title":"Invest in Clean Energy Projects","imageName":"case-study","url":"","text":"Businesses and organizations can take advantage of local investment programs that will be started by the Town of Bridgewater and the Energy Partners."},{"group":"business","title":"Energy-related skills training","imageName":"case-study","url":"","text":"Increase training for staff in current energy technologies and best practices, assign staff to energy management activities, and participate in local clean energy opportunities."}]
 
 /***/ }),
 /* 512 */
@@ -25066,8 +25066,14 @@ module.exports = [{"date":2018,"bau":96863610.8,"lc_amb":91406233.95},{"date":20
 /***/ (function(module, exports, __webpack_require__) {
 
 var Handlebars = __webpack_require__(52);
-module.exports = (Handlebars['default'] || Handlebars).template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+module.exports = (Handlebars['default'] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
+    var helper;
+
+  return "		<div class=\"button-wrap\">\n			<a href=\""
+    + container.escapeExpression(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"url","hash":{},"data":data}) : helper)))
+    + "\" class=\"button\">Learn More</a>\n		</div>\n";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
   return "<h3><span class=\"bold\">Case Study:</span> "
     + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
@@ -25079,7 +25085,9 @@ module.exports = (Handlebars['default'] || Handlebars).template({"compiler":[7,"
     + alias4(((helper = (helper = helpers.imageName || (depth0 != null ? depth0.imageName : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"imageName","hash":{},"data":data}) : helper)))
     + "-mobile.jpg\" alt=\"image\">\n	</picture>\n</div>\n\n<div class=\"text\">\n	<p>"
     + alias4(((helper = (helper = helpers.text || (depth0 != null ? depth0.text : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"text","hash":{},"data":data}) : helper)))
-    + "</p>\n\n</div>\n\n<div class=\"clearfix\"></div>";
+    + "</p>\n	\n"
+    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.url : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "</div>\n\n<div class=\"clearfix\"></div>";
 },"useData":true});
 
 /***/ }),
@@ -25996,18 +26004,26 @@ module.exports = exports['default'];
 /***/ (function(module, exports, __webpack_require__) {
 
 var Handlebars = __webpack_require__(52);
-module.exports = (Handlebars['default'] || Handlebars).template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+module.exports = (Handlebars['default'] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
+    var helper;
+
+  return "				<a href=\""
+    + container.escapeExpression(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"url","hash":{},"data":data}) : helper)))
+    + "\">Learn More</a>\n";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
   return "<div class=\"card "
     + alias4(((helper = (helper = helpers.group || (depth0 != null ? depth0.group : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"group","hash":{},"data":data}) : helper)))
-    + "\">\n\n	<div class=\"text\">\n		<h4>"
+    + "\">\n	<div class=\"text\">\n		<h4>"
     + alias4(((helper = (helper = helpers.group || (depth0 != null ? depth0.group : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"group","hash":{},"data":data}) : helper)))
     + "</h4>\n		<h2>"
     + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
     + "</h2>\n		<p>"
     + alias4(((helper = (helper = helpers.text || (depth0 != null ? depth0.text : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"text","hash":{},"data":data}) : helper)))
-    + " <span class=\"learn-more\">\n		</span></p> \n	</div>\n\n	<div class=\"clearfix\"></div>\n</div>";
+    + " <span class=\"learn-more\">\n"
+    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.url : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "		</span></p> \n	</div>\n\n	<div class=\"clearfix\"></div>\n</div>";
 },"useData":true});
 
 /***/ }),
