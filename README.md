@@ -18,4 +18,4 @@ This will compile & minify files & copy them into the 'dist' directory. Contents
 
 
 Case Studies & "What's next" cards:
-These pieces are built dynamically, using templates found in the "templates" directory. To edit the text of these, you will need to edit the JSON files in the "data" directory – there are two files, one for the cards (ards.json) & another for the case studies (case-studies.json). Changes to either the text or the template will require rerunning the build script (npm run build).
+These pieces are built dynamically, using templates found in the "templates" directory. To add links or edit the text of these, you simply need to edit the JSON files in the "data" directory – there are two files, one for the cards (ards.json) & another for the case studies (case-studies.json). To add a link, simply enter the desired URL in 'url' field, which is currently empty then upload the saved file to the the 'data' directory on the FTP server.

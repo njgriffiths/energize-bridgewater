@@ -62,7 +62,7 @@ gulp.task('watch', ['sass'], () => {
 
 	gulp.watch('app/scss/*.scss', ['sass']);
 	gulp.watch('app/js/*.js', ['webpack']);
-	gulp.watch('app/data/**/*.json', ['webpack']);
+	// gulp.watch('app/data/**/*.json', ['webpack']);
 	gulp.watch('app/templates/**/*.hbs', ['webpack']);
 	gulp.watch('app/*.html', browserSync.reload);
 });
@@ -101,6 +101,13 @@ gulp.task('ugly-js', ['webpack'], () => {
 		.pipe(gulp.dest(folder.build));
 });
 
+// JSON
+gulp.task('json', () => {
+	var output = folder.build + 'data/';
+	return gulp.src(folder.src + 'data/*')
+		.pipe(gulp.dest(output));
+});
+
 // CSS uglify
 gulp.task('ugly-css', ['images'], () => {
 	const plugins = [
@@ -123,4 +130,4 @@ gulp.task('html', ['images'], () => {
 });
 
 // build dist
-gulp.task('build', ['clean', 'sass', 'webpack', 'html', 'favicons', 'ugly-css', 'ugly-js']);
+gulp.task('build', ['clean', 'sass', 'webpack', 'html', 'json', 'favicons', 'ugly-css', 'ugly-js']);

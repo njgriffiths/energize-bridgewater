@@ -2870,7 +2870,7 @@ Cardinal.prototype = {
 
 // Create a simple path alias to allow browserify to resolve
 // the runtime on a supported path.
-module.exports = __webpack_require__(515)['default'];
+module.exports = __webpack_require__(513)['default'];
 
 
 /***/ }),
@@ -10307,11 +10307,11 @@ var _exception = __webpack_require__(34);
 
 var _exception2 = _interopRequireDefault(_exception);
 
-var _helpers = __webpack_require__(516);
+var _helpers = __webpack_require__(514);
 
-var _decorators = __webpack_require__(524);
+var _decorators = __webpack_require__(522);
 
-var _logger = __webpack_require__(526);
+var _logger = __webpack_require__(524);
 
 var _logger2 = _interopRequireDefault(_logger);
 
@@ -10408,23 +10408,32 @@ var barChart = __webpack_require__(180);
 var areaChart = __webpack_require__(509);
 
 // DATA
-var caseStudies = __webpack_require__(510); 
-var cards = __webpack_require__(511); 
-var investments = __webpack_require__(512);
-var savings = __webpack_require__(513);
+// var caseStudies = require('../data/case-studies.json'); 
+// var cards = require('../data/cards.json'); 
+var cards = './data/cards.json';
+var caseStudies = './data/case-studies.json';
+var investments = __webpack_require__(510);
+var savings = __webpack_require__(511);
 
 // TEMPLATES
-var caseStudyTemplate = __webpack_require__(514);
-var cardsTemplate = __webpack_require__(530);
-var tooltipStackedTemplate = __webpack_require__(531);
-var tooltipAreaTemplate = __webpack_require__(532);
+var caseStudyTemplate = __webpack_require__(512);
+var cardsTemplate = __webpack_require__(528);
+var tooltipStackedTemplate = __webpack_require__(529);
+var tooltipAreaTemplate = __webpack_require__(530);
 
 
 // 
 document.addEventListener('DOMContentLoaded', (ev) => {
 	// BUILD OUT TEMPLATE CONTENT
-	buildCards(cards);
-	buildCaseStudies(caseStudies);
+	loadJSON(cards, function(response) {
+    	buildCards(response);
+ 	});
+ 	loadJSON(caseStudies, function(response) {
+    	buildCaseStudies(response);
+ 	});
+
+	// buildCards(cards);
+	// buildCaseStudies(caseStudies);
 
 	// BUILD THE CHARTS
 	barChart.init('#investment-chart', investments, tooltipStackedTemplate);
@@ -10457,6 +10466,23 @@ function buildCards(cards) {
 	// Append to the DOM
 	cardContainer.insertAdjacentHTML('afterbegin', cardString);
 }
+
+// FETCH JSON
+function loadJSON(json, callback) {   
+    var xhr = new XMLHttpRequest();
+    // xhr.overrideMimeType('application/json');
+
+    xhr.open('GET', json, true);
+    xhr.responseType = 'json';
+   
+   	xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == '200') {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xhr.response);
+        }
+    };
+    xhr.send(null);  
+ }
 
 
 /***/ }),
@@ -25041,28 +25067,16 @@ module.exports = app;
 /* 510 */
 /***/ (function(module, exports) {
 
-module.exports = [{"id":"education","title":"Educating the Next Generation","imageName":"cs-education","url":"","text":"Bridgewater prides itself as a community where energy knowledge and education are an open exchange of ideas. We seek to reach people in ways that they can actively participate and be a part of the future of the program. Through events like the “Energize Nova Scotia Discovery Fair”, people can be inspired and learn how they can be part of these solutions. Creating an atmosphere of continual learning for current and future generations is essential for Bridgewater to developing a clean energy economy."},{"id":"school","title":"Small World Learning Centre","imageName":"cs-daycare","url":"","text":"Small World was looking to expand but was concerned about increased energy costs. With support from Efficiency Nova Scotia, they focused their spending on heating systems, appliances, lighting, and extra insulation – leading to a 75% reduction in their energy bills. That translates into nearly $5000 a year that is being reinvested into programming for the kids. By having support to take part in energy savings projects, community service providers can reinvest back into their community."},{"id":"home","title":"Eason Family Home Reno","imageName":"cs-eason","url":"","text":"Like many residents in Bridgewater, the Eason’s well-loved older home was drafty, and their heating bills were very high. They signed up for the town’s Clean Energy Financing program, which gave them access to up to low interest financing to do energy upgrades to the home. About $9000 later, their home energy costs were reduced by nearly $2000 per year, and their home was more comfortable. Examples like this show how accessible programs can provide solutions to families who face energy stress"}]
+module.exports = [{"date":2018,"s1":3482491.4,"s2":880524.56,"s3":-8004.92},{"date":2019,"s1":3502752.75,"s2":860277.58,"s3":89026.43},{"date":2020,"s1":3535199.98,"s2":850823.97,"s3":303526.71},{"date":2021,"s1":3603073.64,"s2":22502826.28,"s3":579238.33},{"date":2022,"s1":3463711.09,"s2":914343.46,"s3":-2991909.98},{"date":2023,"s1":3508224.34,"s2":822463.23,"s3":-2077467.97},{"date":2024,"s1":3532405.14,"s2":813009.62,"s3":-1536572.86},{"date":2025,"s1":3533111.79,"s2":9799055.68,"s3":-1388687.75},{"date":2026,"s1":3528301.1,"s2":9667102.19,"s3":-1291024.12},{"date":2027,"s1":4154280.28,"s2":11491978.41,"s3":-1478829.18},{"date":2028,"s1":4183104.15,"s2":11428430.35,"s3":-1548603.33},{"date":2029,"s1":4231416.36,"s2":11227131.52,"s3":-1583177.73},{"date":2030,"s1":4289476.58,"s2":52626929.58,"s3":-1452765.38},{"date":2031,"s1":4356033.74,"s2":13201502.59,"s3":-933967.72},{"date":2032,"s1":5054391.7,"s2":3108254.21,"s3":-565530.65},{"date":2033,"s1":5107447.89,"s2":3110370.34,"s3":-656404.71},{"date":2034,"s1":5147971.39,"s2":3053940.9,"s3":-866855.84},{"date":2035,"s1":5165761.54,"s2":2996454.74,"s3":-1222690.34},{"date":2036,"s1":5157993.86,"s2":2938167.67,"s3":-1603350.03},{"date":2037,"s1":6292654.6,"s2":2416442.16,"s3":-1928045.71},{"date":2038,"s1":6239631.77,"s2":2712671.26,"s3":-2139222.97},{"date":2039,"s1":6194299.39,"s2":2648828.41,"s3":-2557831.05},{"date":2040,"s1":6172647.49,"s2":2586754.5,"s3":-3044495.52},{"date":2041,"s1":6184975.97,"s2":2543234.79,"s3":-3929594.32},{"date":2042,"s1":8044877.66,"s2":2159153.7,"s3":-4852849.76},{"date":2043,"s1":8076363.52,"s2":2728816.69,"s3":-6147581.59},{"date":2044,"s1":8111329.71,"s2":2658772.78,"s3":-7215998.82},{"date":2045,"s1":8141795.22,"s2":2587824.49,"s3":-8651147.28},{"date":2046,"s1":8164428.7,"s2":2515898.66,"s3":-10904184.03},{"date":2047,"s1":8976709.02,"s2":1152915.15,"s3":-13067892.72},{"date":2048,"s1":8946807.3,"s2":1137923.21,"s3":-15056566.69},{"date":2049,"s1":8889954.78,"s2":1123069.6,"s3":-17015493.71},{"date":2050,"s1":8812476.34,"s2":567215.98,"s3":-18611332.1}]
 
 /***/ }),
 /* 511 */
 /***/ (function(module, exports) {
 
-module.exports = [{"group":"town","title":"Community Capacity Builder","imageName":"case-study","url":"","text":"The Town’s first priority is to build its capacity to implement the Community Energy Investment Plan and to empower community partners to exercise leadership."},{"group":"town","title":"Clean Energy Enabler","imageName":"case-study","url":"","text":"Undertake a series of enabling actions to make sure that clean energy initiatives are not slowed down by red tape, and to allow residents and community partners to pursue their own energy investments."},{"group":"town","title":"Clean Energy Investor","imageName":"case-study","url":"","text":"The Town will invest in clean energy opportunities on a community scale, as well as for its municipal operations."},{"group":"residents","title":"Increase Energy Awareness","imageName":"case-study","url":"","text":"Learning about the benefits and practical applications of clean energy solutions for home, work, school, and community."},{"group":"residents","title":"Home Energy Retrofits","imageName":"case-study","url":"","text":"Upgrade  homes with cost-effective clean energy technologies and practice low-cost energy conservation habits."},{"group":"residents","title":"Use Clean Transportation","imageName":"case-study","url":"","text":"Take public transit, walk, cycle, utilize transportation sharing services, and invest in electric vehicles."},{"group":"business","title":"Building Retrofits","imageName":"case-study","url":"","text":"Businesses and organizations can upgrade their facilities with cost-effective clean energy technologies and practice low-cost energy conservation habits."},{"group":"business","title":"Invest in Clean Energy Projects","imageName":"case-study","url":"","text":"Businesses and organizations can take advantage of local investment programs that will be started by the Town of Bridgewater and the Energy Partners."},{"group":"business","title":"Energy-related skills training","imageName":"case-study","url":"","text":"Increase training for staff in current energy technologies and best practices, assign staff to energy management activities, and participate in local clean energy opportunities."}]
-
-/***/ }),
-/* 512 */
-/***/ (function(module, exports) {
-
-module.exports = [{"date":2018,"s1":3482491.4,"s2":880524.56,"s3":-8004.92},{"date":2019,"s1":3502752.75,"s2":860277.58,"s3":89026.43},{"date":2020,"s1":3535199.98,"s2":850823.97,"s3":303526.71},{"date":2021,"s1":3603073.64,"s2":22502826.28,"s3":579238.33},{"date":2022,"s1":3463711.09,"s2":914343.46,"s3":-2991909.98},{"date":2023,"s1":3508224.34,"s2":822463.23,"s3":-2077467.97},{"date":2024,"s1":3532405.14,"s2":813009.62,"s3":-1536572.86},{"date":2025,"s1":3533111.79,"s2":9799055.68,"s3":-1388687.75},{"date":2026,"s1":3528301.1,"s2":9667102.19,"s3":-1291024.12},{"date":2027,"s1":4154280.28,"s2":11491978.41,"s3":-1478829.18},{"date":2028,"s1":4183104.15,"s2":11428430.35,"s3":-1548603.33},{"date":2029,"s1":4231416.36,"s2":11227131.52,"s3":-1583177.73},{"date":2030,"s1":4289476.58,"s2":52626929.58,"s3":-1452765.38},{"date":2031,"s1":4356033.74,"s2":13201502.59,"s3":-933967.72},{"date":2032,"s1":5054391.7,"s2":3108254.21,"s3":-565530.65},{"date":2033,"s1":5107447.89,"s2":3110370.34,"s3":-656404.71},{"date":2034,"s1":5147971.39,"s2":3053940.9,"s3":-866855.84},{"date":2035,"s1":5165761.54,"s2":2996454.74,"s3":-1222690.34},{"date":2036,"s1":5157993.86,"s2":2938167.67,"s3":-1603350.03},{"date":2037,"s1":6292654.6,"s2":2416442.16,"s3":-1928045.71},{"date":2038,"s1":6239631.77,"s2":2712671.26,"s3":-2139222.97},{"date":2039,"s1":6194299.39,"s2":2648828.41,"s3":-2557831.05},{"date":2040,"s1":6172647.49,"s2":2586754.5,"s3":-3044495.52},{"date":2041,"s1":6184975.97,"s2":2543234.79,"s3":-3929594.32},{"date":2042,"s1":8044877.66,"s2":2159153.7,"s3":-4852849.76},{"date":2043,"s1":8076363.52,"s2":2728816.69,"s3":-6147581.59},{"date":2044,"s1":8111329.71,"s2":2658772.78,"s3":-7215998.82},{"date":2045,"s1":8141795.22,"s2":2587824.49,"s3":-8651147.28},{"date":2046,"s1":8164428.7,"s2":2515898.66,"s3":-10904184.03},{"date":2047,"s1":8976709.02,"s2":1152915.15,"s3":-13067892.72},{"date":2048,"s1":8946807.3,"s2":1137923.21,"s3":-15056566.69},{"date":2049,"s1":8889954.78,"s2":1123069.6,"s3":-17015493.71},{"date":2050,"s1":8812476.34,"s2":567215.98,"s3":-18611332.1}]
-
-/***/ }),
-/* 513 */
-/***/ (function(module, exports) {
-
 module.exports = [{"date":2018,"bau":96863610.8,"lc_amb":91406233.95},{"date":2019,"bau":100217406.6,"lc_amb":93679673.52},{"date":2020,"bau":104079421.5,"lc_amb":96321854.56},{"date":2021,"bau":107129354.1,"lc_amb":96988346.88},{"date":2022,"bau":109871670.1,"lc_amb":98032549.37},{"date":2023,"bau":112679937.9,"lc_amb":99427438.73},{"date":2024,"bau":115147628.4,"lc_amb":100389558.5},{"date":2025,"bau":117762743.1,"lc_amb":100259270.3},{"date":2026,"bau":120481207.4,"lc_amb":100013129},{"date":2027,"bau":123461159.2,"lc_amb":99224307.88},{"date":2028,"bau":126357276.8,"lc_amb":98565545.24},{"date":2029,"bau":129567756.6,"lc_amb":97892131.73},{"date":2030,"bau":132715255.5,"lc_amb":83900124.39},{"date":2031,"bau":135388318.2,"lc_amb":81993108.62},{"date":2032,"bau":138253063.3,"lc_amb":80932670.4},{"date":2033,"bau":141124107.7,"lc_amb":79931191.32},{"date":2034,"bau":144202173.2,"lc_amb":78899898},{"date":2035,"bau":147243294.9,"lc_amb":77779763.16},{"date":2036,"bau":150847831,"lc_amb":76945857.14},{"date":2037,"bau":154220986.5,"lc_amb":75828324.04},{"date":2038,"bau":157929099.5,"lc_amb":74731958.97},{"date":2039,"bau":161550471.7,"lc_amb":73513525.42},{"date":2040,"bau":165138038.4,"lc_amb":72183302.37},{"date":2041,"bau":169271852,"lc_amb":71001717.71},{"date":2042,"bau":173454821,"lc_amb":69573054.46},{"date":2043,"bau":177344204.1,"lc_amb":67822317.23},{"date":2044,"bau":181354758.4,"lc_amb":66059630.14},{"date":2045,"bau":185742186,"lc_amb":64412508.54},{"date":2046,"bau":189838055.4,"lc_amb":62640860.12},{"date":2047,"bau":193957041.4,"lc_amb":60971636.47},{"date":2048,"bau":197750520.1,"lc_amb":59202762.78},{"date":2049,"bau":201850668.6,"lc_amb":57583506.69},{"date":2050,"bau":205587058.1,"lc_amb":56203554.46}]
 
 /***/ }),
-/* 514 */
+/* 512 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Handlebars = __webpack_require__(52);
@@ -25091,7 +25105,7 @@ module.exports = (Handlebars['default'] || Handlebars).template({"1":function(co
 },"useData":true});
 
 /***/ }),
-/* 515 */
+/* 513 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25113,7 +25127,7 @@ var base = _interopRequireWildcard(_handlebarsBase);
 // Each of these augment the Handlebars object. No need to setup here.
 // (This is done to easily share code between commonjs and browse envs)
 
-var _handlebarsSafeString = __webpack_require__(527);
+var _handlebarsSafeString = __webpack_require__(525);
 
 var _handlebarsSafeString2 = _interopRequireDefault(_handlebarsSafeString);
 
@@ -25125,11 +25139,11 @@ var _handlebarsUtils = __webpack_require__(12);
 
 var Utils = _interopRequireWildcard(_handlebarsUtils);
 
-var _handlebarsRuntime = __webpack_require__(528);
+var _handlebarsRuntime = __webpack_require__(526);
 
 var runtime = _interopRequireWildcard(_handlebarsRuntime);
 
-var _handlebarsNoConflict = __webpack_require__(529);
+var _handlebarsNoConflict = __webpack_require__(527);
 
 var _handlebarsNoConflict2 = _interopRequireDefault(_handlebarsNoConflict);
 
@@ -25164,7 +25178,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 516 */
+/* 514 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25176,31 +25190,31 @@ exports.registerDefaultHelpers = registerDefaultHelpers;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _helpersBlockHelperMissing = __webpack_require__(517);
+var _helpersBlockHelperMissing = __webpack_require__(515);
 
 var _helpersBlockHelperMissing2 = _interopRequireDefault(_helpersBlockHelperMissing);
 
-var _helpersEach = __webpack_require__(518);
+var _helpersEach = __webpack_require__(516);
 
 var _helpersEach2 = _interopRequireDefault(_helpersEach);
 
-var _helpersHelperMissing = __webpack_require__(519);
+var _helpersHelperMissing = __webpack_require__(517);
 
 var _helpersHelperMissing2 = _interopRequireDefault(_helpersHelperMissing);
 
-var _helpersIf = __webpack_require__(520);
+var _helpersIf = __webpack_require__(518);
 
 var _helpersIf2 = _interopRequireDefault(_helpersIf);
 
-var _helpersLog = __webpack_require__(521);
+var _helpersLog = __webpack_require__(519);
 
 var _helpersLog2 = _interopRequireDefault(_helpersLog);
 
-var _helpersLookup = __webpack_require__(522);
+var _helpersLookup = __webpack_require__(520);
 
 var _helpersLookup2 = _interopRequireDefault(_helpersLookup);
 
-var _helpersWith = __webpack_require__(523);
+var _helpersWith = __webpack_require__(521);
 
 var _helpersWith2 = _interopRequireDefault(_helpersWith);
 
@@ -25217,7 +25231,7 @@ function registerDefaultHelpers(instance) {
 
 
 /***/ }),
-/* 517 */
+/* 515 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25263,7 +25277,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 518 */
+/* 516 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25364,7 +25378,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 519 */
+/* 517 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25396,7 +25410,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 520 */
+/* 518 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25432,7 +25446,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 521 */
+/* 519 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25465,7 +25479,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 522 */
+/* 520 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25484,7 +25498,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 523 */
+/* 521 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25524,7 +25538,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 524 */
+/* 522 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25536,7 +25550,7 @@ exports.registerDefaultDecorators = registerDefaultDecorators;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _decoratorsInline = __webpack_require__(525);
+var _decoratorsInline = __webpack_require__(523);
 
 var _decoratorsInline2 = _interopRequireDefault(_decoratorsInline);
 
@@ -25547,7 +25561,7 @@ function registerDefaultDecorators(instance) {
 
 
 /***/ }),
-/* 525 */
+/* 523 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25583,7 +25597,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 526 */
+/* 524 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25637,7 +25651,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 527 */
+/* 525 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25659,7 +25673,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 528 */
+/* 526 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25973,7 +25987,7 @@ function executeDecorators(fn, prog, container, depths, data, blockParams) {
 
 
 /***/ }),
-/* 529 */
+/* 527 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26000,7 +26014,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 530 */
+/* 528 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Handlebars = __webpack_require__(52);
@@ -26027,7 +26041,7 @@ module.exports = (Handlebars['default'] || Handlebars).template({"1":function(co
 },"useData":true});
 
 /***/ }),
-/* 531 */
+/* 529 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Handlebars = __webpack_require__(52);
@@ -26056,7 +26070,7 @@ module.exports = (Handlebars['default'] || Handlebars).template({"1":function(co
 },"useData":true});
 
 /***/ }),
-/* 532 */
+/* 530 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Handlebars = __webpack_require__(52);
