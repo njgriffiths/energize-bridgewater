@@ -1,14 +1,12 @@
 // CHARTS
 var barChart = require('./stacked-bar');
 var areaChart = require('./stacked-area');
+var Tabletop = require('Tabletop');
 
 // DATA
-// var caseStudies = require('../data/case-studies.json'); 
-// var cards = require('../data/cards.json'); 
-var cards = './data/cards.json';
-var caseStudies = './data/case-studies.json';
 var investments = require('../data/capital-investments.json');
 var savings = require('../data/cost-savings.json');
+var templateDataUrl = 'https://docs.google.com/spreadsheets/d/1JpecwSGSjuscdhpk7WyQ2U06qgH-Uj7Tcwgtk0Grdn4/edit?usp=sharing';
 
 // TEMPLATES
 var caseStudyTemplate = require('../templates/case-study.hbs');
@@ -19,16 +17,11 @@ var tooltipAreaTemplate = require('../templates/area-tooltip.hbs');
 
 // 
 document.addEventListener('DOMContentLoaded', (ev) => {
-	// BUILD OUT TEMPLATE CONTENT
-	loadJSON(cards, function(response) {
-    	buildCards(response);
- 	});
- 	loadJSON(caseStudies, function(response) {
-    	buildCaseStudies(response);
- 	});
-
-	// buildCards(cards);
-	// buildCaseStudies(caseStudies);
+	// FETCH CONTENT FROM THE GOOGLE SHEET
+	Tabletop.init({
+	 	key: templateDataUrl,
+		callback: parseTemplateData
+	});
 
 	// BUILD THE CHARTS
 	barChart.init('#investment-chart', investments, tooltipStackedTemplate);
@@ -36,7 +29,15 @@ document.addEventListener('DOMContentLoaded', (ev) => {
 });
 
 
+function parseTemplateData(data, tabletop) {
+	// EXTRACT INFO FROM SPECIFIC SHEETS
+	var cards = tabletop.sheets('cards').all();
+	var caseStudies = tabletop.sheets('case_studies').all();
 
+	// BUILD THE TEMPLATES
+	buildCards(cards);
+	buildCaseStudies(caseStudies);
+}
 
 // CASE STUDIES
 function buildCaseStudies(caseStudies) {
@@ -61,20 +62,3 @@ function buildCards(cards) {
 	// Append to the DOM
 	cardContainer.insertAdjacentHTML('afterbegin', cardString);
 }
-
-// FETCH JSON
-function loadJSON(json, callback) {   
-    var xhr = new XMLHttpRequest();
-    // xhr.overrideMimeType('application/json');
-
-    xhr.open('GET', json, true);
-    xhr.responseType = 'json';
-   
-   	xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == '200') {
-            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-            callback(xhr.response);
-        }
-    };
-    xhr.send(null);  
- }
