@@ -17,6 +17,11 @@
 		line-height: 1.35rem;
 	}
 
+	a {
+		color: $highlight;
+		text-decoration: none;
+	}
+
 	img {
 		width: 100%;
 	}
@@ -32,7 +37,7 @@
 		border-radius: 3px;
 		color: white;
 		font-size: 0.75rem;
-		padding: 8px 6px 6px;
+		padding: 6px;
 		text-decoration: none;
 	}
 

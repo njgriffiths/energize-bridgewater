@@ -72,6 +72,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   letter-spacing: 0.005rem;
   line-height: 1.35rem;
 }
+.article a {
+  color: #77b044;
+  text-decoration: none;
+}
 .article img {
   width: 100%;
 }
@@ -85,7 +89,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border-radius: 3px;
   color: white;
   font-size: 0.75rem;
-  padding: 8px 6px 6px;
+  padding: 6px;
   text-decoration: none;
 }
 .article .highlight {
